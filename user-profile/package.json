@@ -1,0 +1,19 @@
+{
+  "name": "user-profile",
+  "version": "1.0.0",
+  "description": "This Lambda function will create a job to transcode videos uploaded to an S3 bucket",
+  "main": "UserProfile.js",
+  "scripts": {
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:us-east-1:540384692599:function:user-profile --zip-file fileb://Lambda-Deployment.zip",
+    "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "request": "^2.88.2"
+  },
+  "author": "Peter Sbarski",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "run-local-lambda": "^1.1.1"
+  }
+}
